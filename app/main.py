@@ -1,6 +1,9 @@
 def copy_file(command: str) -> None:
     commands_list = command.split(" ")
-    if len(commands_list) < 3 or commands_list[0] != "cp":
+    if len(commands_list) != 3 or commands_list[0] != "cp":
+        return
+
+    if commands_list[1] == commands_list[2]:
         return
 
     try:
